@@ -49,8 +49,8 @@ def get_birthday2():
     next = next.replace(year=next.year + 1)
   return (next - today).days
 
-def get_birthday():
-  next = datetime.strptime(str(date.today().year) + "-" + birthday, "%Y-%m-%d")
+def get_birthday3():
+  next = datetime.strptime(str(date.today().year) + "-" + birthday3, "%Y-%m-%d")
   if next < datetime.now():
     next = next.replace(year=next.year + 1)
   return (next - today).days
