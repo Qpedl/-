@@ -24,22 +24,6 @@ def get_weather():
   weather = res['data']['list'][0]
   return weather['weather'], math.floor(weather['temp'])
 
-def tip():
-
-    if (tianqi_API!="https://www.tianapi.com/apiview/72"):
-        conn = http.client.HTTPSConnection('api.tianapi.com')  #接口域名
-        params = urllib.parse.urlencode({'key':tianqi_API,'city':city})
-        headers = {'Content-type':'application/x-www-form-urlencoded'}
-        conn.request('POST','/tianqi/index',params,headers)
-        res = conn.getresponse()
-        data = res.read()
-        data = json.loads(data)
-        pop = data["newslist"][0]["pop"]
-        tips = data["newslist"][0]["tips"]
-        return pop,tips
-    else:
-        return "",""
-      
 def get_count():
   delta = today - datetime.strptime(start_date, "%Y-%m-%d")
   return delta.days
